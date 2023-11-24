@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body">
         <!-- 로그인 폼 -->
-        <form>
+        <form action="user/login.do" method="POST">
           <div class="form-group">
             <label for="userEmail">이메일</label>
             <input type="text" class="form-control" id="userEmail" placeholder="사용자 이메일 입력">
