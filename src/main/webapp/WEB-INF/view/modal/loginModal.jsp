@@ -10,7 +10,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- 로그인 폼 -->
         <form action="user/login.do" method="POST">
           <div class="form-group">
             <label for="userEmail">이메일</label>
