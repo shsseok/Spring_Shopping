@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shopping.mapper.ItemMapper">
+
+<insert id="insertItem" parameterType="shopping.model.ItemVO" useGeneratedKeys="true" keyProperty="itemId">
+    INSERT INTO 
+    shopping.item (item_id, user_id, category_id, stock_quantity, item_description, item_price, item_name, item_date)
+    VALUES 
+    (#{itemId}, #{userId}, #{categoryId}, #{stockQuantity}, #{itemDescription}, #{itemPrice}, #{itemName}, #{itemDate, jdbcType=TIMESTAMP})
+</insert>
+</mapper> 
