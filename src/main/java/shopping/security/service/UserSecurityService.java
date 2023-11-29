@@ -1,4 +1,4 @@
-package shopping.security.service;
+/*package shopping.security.service;
 
 import java.util.List;
 
@@ -9,3 +9,4 @@ public interface UserSecurityService {
     public UserVO getUser(String loginUserId);
     public List<UserRoleVO> getUserRoles(String loginUserId);
 }
+*/

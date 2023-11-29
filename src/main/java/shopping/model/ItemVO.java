@@ -6,11 +6,12 @@ public class ItemVO {
 	private int itemId;
 	private int userId;
 	private int categoryId;
-	private int stock_quantity;
-	private int item_description;
-	private int item_price;
-	private String item_name;
-	private LocalDateTime item_date;
+	private int stockQuantity;
+	private String itemDescription;
+	private int itemPrice;
+	private String itemName;
+	private LocalDateTime uploadedDate;
+
 	public int getItemId() {
 		return itemId;
 	}
@@ -29,36 +30,37 @@ public class ItemVO {
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
-	public int getStock_quantity() {
-		return stock_quantity;
+	public int getStockQuantity() {
+		return stockQuantity;
 	}
-	public void setStock_quantity(int stock_quantity) {
-		this.stock_quantity = stock_quantity;
+	public void setStockQuantity(int stockQuantity) {
+		this.stockQuantity = stockQuantity;
 	}
-	public int getItem_description() {
-		return item_description;
+	public String getItemDescription() {
+		return itemDescription;
 	}
-	public void setItem_description(int item_description) {
-		this.item_description = item_description;
+	public void setItemDescription(String itemDescription) {
+		this.itemDescription = itemDescription;
 	}
-	public int getItem_price() {
-		return item_price;
+	public int getItemPrice() {
+		return itemPrice;
 	}
-	public void setItem_price(int item_price) {
-		this.item_price = item_price;
+	public void setItemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
 	}
-	public String getItem_name() {
-		return item_name;
+	public String getItemName() {
+		return itemName;
 	}
-	public void setItem_name(String item_name) {
-		this.item_name = item_name;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
-	public LocalDateTime getItem_date() {
-		return item_date;
+	public LocalDateTime getUploadedDate() {
+		return uploadedDate;
 	}
-	public void setItem_date(LocalDateTime item_date) {
-		this.item_date = item_date;
+	public void setUploadedDate(LocalDateTime uploadedDate) {
+		this.uploadedDate = uploadedDate;
 	}
+	
 	
 	
 }

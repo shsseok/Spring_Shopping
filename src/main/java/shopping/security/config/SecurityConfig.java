@@ -1,4 +1,4 @@
-package shopping.security.config;
+/*package shopping.security.config;
 
 
 
@@ -60,3 +60,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 }
+*/

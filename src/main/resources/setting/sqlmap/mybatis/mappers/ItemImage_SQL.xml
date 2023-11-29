@@ -3,9 +3,9 @@
 <mapper namespace="shopping.mapper.ItemImageMapper">
 
 <insert id="itemImageSave" parameterType="java.util.List">
-    INSERT INTO image_table (item_id, original_image_name, image_path, uploaded_date) VALUES
+    INSERT INTO shopping.item_images (item_id, original_image_name, image_path) VALUES
     <foreach collection="list" item="itemImage" separator=",">
-        (#{itemImage.itemId}, #{itemImage.originalImageName}, #{itemImage.imagePath},#{itemImage.uploadedDate, jdbcType=TIMESTAMP})
+        (#{itemImage.itemId}, #{itemImage.originalImageName}, #{itemImage.imagePath})
     </foreach>
 </insert>
 </mapper> 

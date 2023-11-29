@@ -1,4 +1,4 @@
-package shopping.controller;
+/*package shopping.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,4 +26,4 @@ public class UserController {
         return "members/loginerror";
     }
 
-}
+}*/

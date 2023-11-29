@@ -1,4 +1,4 @@
-package shopping.security.service;
+/*package shopping.security.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -50,3 +50,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return customUserDetails;
     }
 }
+*/

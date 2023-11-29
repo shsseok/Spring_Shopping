@@ -1,13 +1,13 @@
-package shopping.security.service;
+/*package shopping.security.service;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails {
-    /**
+    *//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = 1L;
 	private String username;
     private String password;
@@ -80,3 +80,4 @@ public class CustomUserDetails implements UserDetails {
         this.authorities = authorities;
     }
 }
+*/

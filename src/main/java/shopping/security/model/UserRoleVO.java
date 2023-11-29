@@ -1,4 +1,4 @@
-package shopping.security.model;
+/*package shopping.security.model;
 
 public class UserRoleVO {
     private String userLoginId;
@@ -25,3 +25,4 @@ public class UserRoleVO {
         this.roleName = roleName;
     }
 }
+*/

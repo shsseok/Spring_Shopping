@@ -1,4 +1,4 @@
-package shopping.service;
+/*package shopping.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,4 +22,4 @@ public class UserServiceImpl implements UserService{
         return list;
 	}
 
-}
+}*/
