@@ -8,4 +8,9 @@
         (#{itemImage.itemId}, #{itemImage.originalImageName}, #{itemImage.imagePath})
     </foreach>
 </insert>
+<!--  
+TODO
+추후 따로 수정 할 수 있고 삭제 할 수 있도록
+
+-->
 </mapper> 

@@ -9,6 +9,14 @@ import shopping.response.ItemResponse;
 @Mapper
 public interface ItemMapper {
 	void itemSave(ItemVO itemVO);
+
 	ItemResponse getItem(int itemId);
+
 	List<ItemResponse> getItemList();
+	
+	List<ItemResponse> getItemCategoryList(int categoryId);
+
+	int removeItem(int itemId);
+
+	int updateItem(ItemVO itmeVO);
 }

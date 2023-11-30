@@ -69,4 +69,38 @@
         shopping.item_images im ON i.item_id = im.item_id
 </select>
 
+<select id="getItemCategoryList" resultMap="ItemResponseResultMap">
+    SELECT
+        i.item_id,
+        i.user_id,
+        i.category_id,
+        i.stock_quantity,
+        i.item_description,
+        i.item_price,
+        i.item_name,
+        i.uploaded_date,
+        im.image_id,
+        im.original_image_name,
+        im.image_path,
+        im.uploaded_date 
+    FROM
+        shopping.item i 
+    LEFT JOIN
+        shopping.item_images im ON i.category_id = #{categoryId}
+</select>
+<delete id="removeItem" parameterType="int">
+	DELETE 
+	FROM shopping.item i
+	WHERE i.item_id=#{itemId}
+</delete>
+<update id="updateItem" parameterType="shopping.model.ItemVO">
+UPDATE shopping.item 
+SET
+    item_description = #{itemDescription},
+    item_price = #{itemPrice},
+    item_name = #{itemName}
+WHERE item_id = #{itemId}; <!--수정 날짜도 추가하는 방식으로  -->
+
+</update>
+
 </mapper> 
