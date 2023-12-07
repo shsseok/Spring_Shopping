@@ -61,6 +61,23 @@ public class ItemVO {
 		this.uploadedDate = uploadedDate;
 	}
 	
-	
+	/*
+	 * 상품 재고에 대한 비즈니스 로직
+	 */
+	public void removeStock(int stockCount)
+	{
+		this.stockQuantity-=stockCount;
+		if(stockQuantity<0) //재고가 한개 이하로 떨어지게 되면 예외 발생
+		{
+			throw new IllegalStateException("너무 많이 주문 했습니다");
+		}
+		
+	}
+	public void addStock(int stockCount)
+	{
+		int currentStock=this.stockQuantity;//현재 재고
+		this.stockQuantity+=stockCount;
+		//TODO  아이템 그 총 수량보다 그 이상 올라갈 수는 없도록
+	}
 	
 }

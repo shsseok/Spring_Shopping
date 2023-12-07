@@ -49,6 +49,20 @@
         shopping.item_images im ON i.item_id = im.item_id
     WHERE i.item_id=#{itmeId}
 </select>
+<select id="getItemById" resultMap="ItemVOResultMap" parameterType="int">
+    SELECT
+        i.item_id,
+        i.user_id,
+        i.category_id,
+        i.stock_quantity,
+        i.item_description,
+        i.item_price,
+        i.item_name,
+        i.uploaded_date
+    FROM
+        shopping.item i
+    WHERE i.item_id=#{itmeId}
+</select>
 <select id="getItemList" resultMap="ItemResponseResultMap">
     SELECT
         i.item_id,
@@ -103,4 +117,11 @@ WHERE item_id = #{itemId}; <!--수정 날짜도 추가하는 방식으로  -->
 
 </update>
 
+<update id="updateItemStockQuantity" parameterType="shopping.model.ItemVO">
+UPDATE shopping.item 
+SET
+    stock_quantity = #{stockQuantity}
+WHERE item_id = #{itemId}; <!--수정 날짜도 추가하는 방식으로  -->
+
+</update>
 </mapper> 

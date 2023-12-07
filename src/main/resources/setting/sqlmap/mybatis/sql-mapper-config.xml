@@ -8,6 +8,6 @@
         <setting name="callSettersOnNulls" value="true"/>
 </settings>
 <typeHandlers>
-<typeHandler javaType="shopping.model.OrderStatus" handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+<typeHandler javaType="shopping.model.OrderStatus" handler="org.apache.ibatis.type.EnumTypeHandler"/>
 </typeHandlers>
 </configuration>

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="shopping.mapper.ItemMapper">
+<mapper namespace="shopping.mapper.OrderMapper">
 <resultMap id="OrderVOResultMap" type="shopping.model.OrderVO">
     <id property="orderId" column="order_id"/>
     <result property="userId" column="user_id"/>
     <result property="orderTotalPrice" column="order_total_price"/>
-    <result property="orderStatus" column="order_status" javaType="shopping.model.OrderStatus" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
-    <result property="addressId" column="address_id"/>
+    <result property="orderStatus" column="order_status" javaType="shopping.model.OrderStatus" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
+    <result property="zipcode" column="zipcode"/>
+    <result property="city" column="city"/>
+    <result property="detailedAddress" column="detailed_address"/>
     <result property="orderItemCount" column="order_item_count"/>
 </resultMap>
 
-<resultMap id="AddressResultMap" type="shopping.model.AddressVO">
+<!-- <resultMap id="AddressResultMap" type="shopping.model.AddressVO">
     <id property="addressId" column="address_id"/>
     <result property="zipcode" column="zipcode"/>
     <result property="city" column="city"/>
@@ -18,7 +20,33 @@
 </resultMap>
 <resultMap id="OrderResponseResultMap" type="shopping.response.OrderResponse">
 	<association property="orderVO" resultMap="OrderVOResultMap"/>
-    <association property="adressVO"  resultMap="AddressResultMap"/>
-</resultMap>
+    <association property="addressVO"  resultMap="AddressResultMap"/>
+</resultMap> -->
+
+<insert id="insertOrder" parameterType="shopping.model.OrderVO">
+    INSERT INTO shopping.order (user_id, order_total_price, order_status, order_item_count,order_item_id,zipcode,city, detailed_address)
+    VALUES (#{userId}, #{orderTotalPrice}, #{orderStatus}, #{orderItemCount}, #{itemId}, #{zipcode}, #{city}, #{detailedAddress})
+</insert>
+<update id="updateOrderStatus" parameterType="int">
+	UPDATE shopping.order
+	SET
+ 	order_status=#{orderStatus}
+	WHERE order_id = #{orderId};
+</update>
+<select id="selectOrder" resultMap="OrderVOResultMap" parameterType="int">
+    SELECT
+     *
+    FROM
+        shopping.order o
+    WHERE o.order_id=#{orderId}
+</select>
+<select id="selectOrderList" resultMap="OrderVOResultMap" parameterType="int">
+    SELECT
+     *
+    FROM
+        shopping.order o
+    WHERE o.user_id=#{userId}
+</select>
+
 
 </mapper> 

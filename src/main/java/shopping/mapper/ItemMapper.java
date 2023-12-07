@@ -12,11 +12,15 @@ public interface ItemMapper {
 
 	ItemResponse getItem(int itemId);
 
+	ItemVO getItemById(int itemId);
+
 	List<ItemResponse> getItemList();
-	
+
 	List<ItemResponse> getItemCategoryList(int categoryId);
 
 	int removeItem(int itemId);
 
 	int updateItem(ItemVO itmeVO);
+
+	int updateItemStockQuantity(ItemVO itemVO);
 }

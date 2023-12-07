@@ -77,9 +77,15 @@ public class ItemService {
 		return itemMapper.removeItem(itemId) == 1 ? true : false;
 
 	}
-
+	public ItemVO findItemById(int itemId)
+	{
+		return itemMapper.getItemById(itemId);
+	}
 	public boolean updateItem(ItemVO itemVO) {
 		return itemMapper.updateItem(itemVO) >= 1 ? true : false;
+	}
+	public boolean changeStockQuantity(ItemVO itemVO) {
+		return itemMapper.updateItemStockQuantity(itemVO) >= 1 ? true : false;
 	}
 
 }

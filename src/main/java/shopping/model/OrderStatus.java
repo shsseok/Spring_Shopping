@@ -5,5 +5,17 @@ package shopping.model;
  *
  */
 public enum OrderStatus {
-	CANCEL,COMPLETE 
+    CANCEL("CANCEL"),
+    COMPLETE("COMPLETE");
+
+    private final String status;
+
+    OrderStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 }
+

@@ -1,22 +1,27 @@
-/*package shopping.controller;
+package shopping.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+import shopping.request.UserRegisterRequest;
 import shopping.service.UserService;
 
 @Controller
-@RequestMapping(path = "/members")
+@RequestMapping(path = "/users")
 public class UserController {
-    // 스프링 컨테이너가 생성자를 통해 자동으로 주입한다.
+    
     @Autowired
 	private UserService userService;
 
-    @GetMapping("/loginform")
+/*    @GetMapping("/loginform")
     public String loginform(){
         return "members/loginform";
     }
@@ -24,6 +29,13 @@ public class UserController {
     @RequestMapping("/loginerror")
     public String loginerror(@RequestParam("login_error")String loginError){
         return "members/loginerror";
+    }*/
+    @PostMapping(consumes="application/json; charset=utf8")
+    public ResponseEntity<String> userSave(@RequestBody UserRegisterRequest userRegisterRequest )
+    {
+    	userService.addUser(userRegisterRequest);
+    	String message="회원가입 성공";
+    	return ResponseEntity.ok(message);
     }
-
-}*/
+    
+}

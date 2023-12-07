@@ -12,11 +12,6 @@ public class OrderResponse {
 	public void setOrderVO(OrderVO orderVO) {
 		this.orderVO = orderVO;
 	}
-	public AddressVO getAddressVO() {
-		return addressVO;
-	}
-	public void setAddressVO(AddressVO addressVO) {
-		this.addressVO = addressVO;
-	}
+
 	
 }
