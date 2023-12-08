@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shopping.mapper.ItemImageMapper">
+
+<insert id="itemImageSave" parameterType="java.util.List">
+    INSERT INTO shopping.item_images (item_id, original_image_name, image_path) VALUES
+    <foreach collection="list" item="itemImage" separator=",">
+        (#{itemImage.itemId}, #{itemImage.originalImageName}, #{itemImage.imagePath})
+    </foreach>
+</insert>
+<!--  
+TODO
+추후 따로 수정 할 수 있고 삭제 할 수 있도록
+
+-->
+</mapper> 

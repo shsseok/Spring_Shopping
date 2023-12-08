@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="geomex.security.mapper.UserMapper">
+<mapper namespace="shopping.mapper.UserMapper">
 
-	<select id="findUser" parameterType="int" resultType="shopping.model.UserVO">
+	<select id="selectUser" parameterType="int" resultType="shopping.model.UserVO">
 		SELECT *
 		FROM shopping.user
-		WHERE  = #{userId}
+		WHERE  user_id = #{userId}
 	</select>
+	<select id="selectUserByEmail" parameterType="String" resultType="shopping.model.UserVO">
+		SELECT *
+		FROM shopping.user
+		WHERE  user_email = #{userEmail}
+	</select>
+	<insert id="insertUser" parameterType="shopping.model.UserVO">
+	INSERT INTO 
+    shopping.user (user_email,user_password,user_name)
+    VALUES 
+    (#{userEmail}, #{userPassword}, #{userName})
+	</insert>
 
 </mapper> 
